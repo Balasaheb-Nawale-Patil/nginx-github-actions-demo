@@ -8,7 +8,7 @@ jobs:
 
   steps:
    - name: Checkout Repository for first time..!!
-   - uses: actions/checkout@v4  
+     uses: actions/checkout@v4  
    - name: Build Dcoker Image
      run: docker build -t nginx-demo .
    - name: Run Container

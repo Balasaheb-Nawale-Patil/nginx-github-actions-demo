@@ -1,0 +1,15 @@
+name: Nginx CI Pipeline
+on:
+  push:
+    branches: [main]
+jobs:
+ build:
+  run-on: ubuntu:latest
+
+  steps:
+   - name: Checkout Repository for first time..!!
+   - uses: actions/checkout@v4  
+   - name: Build Dcoker Image
+     run: docker build -t nginx-demo .
+   - name: Run Container
+     run: docker run -d -p 8080:80 nginx-demo  
